@@ -15,13 +15,15 @@ namespace TrabajoFinal2Estructura_Datos
         {
             Principal metodos = new Principal(); //instancia de clase de las funciones principales
             int opcion_Nro = 0;
-            while (opcion_Nro != 11)
+            while (opcion_Nro != 12)
             {
                 string opcionUsuario;
                 //Console.Clear();// Limpia pantalla
-                
-                Console.WriteLine("Bienvenido a TU CombO, que deseas hacer? ");
-                Console.WriteLine("Menu Cliente: " +
+                Console.WriteLine(" \n");
+
+                Console.WriteLine("Bienvenido a TU PedidO, que deseas hacer? ");
+                Console.WriteLine("Menu Usuario: " +
+                    "\n1"
                     "\n1) Crear Cola" +
                     "\n2) Eliminar Compra Cola " +
                     "\n3) Agregar Pedido " +
@@ -32,13 +34,15 @@ namespace TrabajoFinal2Estructura_Datos
                     "\n8) Cantidad de Pedido " +
                     "\n9) Buscar Pedido" +
                     "\n10) Borrar ultimo Pedido " +
-                    "\n11) Salir");
+                    "\n11) Imprimir " +
+                    "\n12) Salir");
 
                 Console.WriteLine("\nIngrese una opción:");
                 opcionUsuario = Console.ReadLine();
                 bool opop  = int.TryParse(opcionUsuario, out opcion_Nro);// Intenta convertirlo sino puede lo deja al valor inicial 
-                Console.WriteLine("\n \n");
+                Console.WriteLine(" \n");
 
+                
                 switch (opcion_Nro)
                 {
                     case 1:
@@ -82,6 +86,10 @@ namespace TrabajoFinal2Estructura_Datos
                         break;
 
                     case 11:
+                        metodos.imprimir_csv();
+                        break;
+
+                    case 12:
                         break;
 
                     default:
