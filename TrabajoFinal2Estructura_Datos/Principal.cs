@@ -53,10 +53,9 @@ namespace TrabajoFinal2Estructura_Datos
 
 
                 bool EsNumero = int.TryParse(pedido, out pedidos); //out salida del entero, resultado se guarada booleano para usar en validaciones V o F resultado
-                while (!EsNumero)// cuando no se puede convertir en int queda en F, tenemos la negacion conviert el F o V y entra al while
-
+                while (!EsNumero || pedidos < 0 || pedidos > 998 )// cuando no se puede convertir en int queda en F, tenemos la negacion conviert el F o V y entra al while
                 {
-                    Console.WriteLine("\n\nEl pedido no es un número");
+                    Console.WriteLine("\n\nEl pedido no es un número o tiene que ser menor a 999 ");
                     Console.WriteLine("\n\nIngrese nuevamente el pedido");
                     pedido = Console.ReadLine();
                     EsNumero = int.TryParse(pedido, out pedidos);

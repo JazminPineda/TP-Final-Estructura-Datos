@@ -24,18 +24,18 @@ namespace TrabajoFinal2Estructura_Datos
                 Console.WriteLine("Bienvenido a TU PedidO, que deseas hacer? ");
                 Console.WriteLine("Menu Usuario: " +
                     "\n" +
-                    "\n1) Crear Cola" +
-                    "\n2) Eliminar Compra Cola " +
-                    "\n3) Agregar Pedido " +
-                    "\n4) Borrar Pedido" +
-                    "\n5) Listar todos los pedidos" +
-                    "\n6) Listar último Pedido" +
-                    "\n7) Listar primer Pedido " +
-                    "\n8) Cantidad de Pedido " +
-                    "\n9) Buscar Pedido" +
-                    "\n10) Borrar ultimo Pedido " +
-                    "\n11) Guardar archivo" +
-                    "\n12) Salir");
+                    "\n1 - Crear Cola" +
+                    "\n2 - Eliminar Compra Cola " +
+                    "\n3 - Agregar Pedido " +
+                    "\n4 - Borrar Pedido" +
+                    "\n5 - Listar todos los pedidos" +
+                    "\n6 - Listar último Pedido" +
+                    "\n7 - Listar primer Pedido " +
+                    "\n8 - Cantidad de Pedido " +
+                    "\n9 - Buscar Pedido" +
+                    "\n10 - Borrar ultimo Pedido " +
+                    "\n11 - Guardar archivo" +
+                    "\n12 - Salir");
 
                 Console.WriteLine("\nIngrese una opción:");
                 opcionUsuario = Console.ReadLine();
