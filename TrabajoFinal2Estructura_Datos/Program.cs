@@ -23,7 +23,7 @@ namespace TrabajoFinal2Estructura_Datos
 
                 Console.WriteLine("Bienvenido a TU PedidO, que deseas hacer? ");
                 Console.WriteLine("Menu Usuario: " +
-                    "\n1"
+                    "\n" +
                     "\n1) Crear Cola" +
                     "\n2) Eliminar Compra Cola " +
                     "\n3) Agregar Pedido " +
@@ -34,7 +34,7 @@ namespace TrabajoFinal2Estructura_Datos
                     "\n8) Cantidad de Pedido " +
                     "\n9) Buscar Pedido" +
                     "\n10) Borrar ultimo Pedido " +
-                    "\n11) Imprimir " +
+                    "\n11) Guardar archivo" +
                     "\n12) Salir");
 
                 Console.WriteLine("\nIngrese una opción:");
