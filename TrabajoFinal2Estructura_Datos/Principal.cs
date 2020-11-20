@@ -28,7 +28,7 @@ namespace TrabajoFinal2Estructura_Datos
 
             else
             {
-                miCola.Clear();
+                miCola = null;
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("La cola fue eliminada ");
                 Console.ResetColor();
@@ -89,7 +89,7 @@ namespace TrabajoFinal2Estructura_Datos
 
                 while (miCola.Count > 0)
                 {
-                    if ((int)miCola.Peek() == Borrado_elemento) //Peek devuelve un elemento y se converte a entero.  Se compara primer elemento con 
+                    if ((int)miCola.Peek() == Borrado_elemento) //Peek devuelve un elemento y se convierte a entero.  Se compara primer elemento con 
                     {
                         miCola.Dequeue();// elemento que se eliminar
                     }
@@ -170,9 +170,9 @@ namespace TrabajoFinal2Estructura_Datos
         public void listar_Primer_Pedido()
 
         {
-            if (miCola == null)
+            if (miCola == null || miCola.Count == 0) //verifica que halla cola ò pedidos ingresados
             {
-                Console.WriteLine("No hay cola. Crea la cola con opción 1 ");
+                Console.WriteLine("No hay cola o no hay pedidos. Cree cola o agregue pedidos. ");
             }
 
             else
@@ -187,10 +187,11 @@ namespace TrabajoFinal2Estructura_Datos
 
         public void Cantidad_pedidos()
         {
-            if (miCola == null)
+            if (miCola == null || miCola.Count == 0) //verifica que halla cola ò pedidos ingresados
             {
-                Console.WriteLine("No hay cola o no a ingresado pedidos ");
+                Console.WriteLine("No hay cola o no hay pedidos. Cree cola o agregue pedidos. ");
             }
+
 
             else
             {
@@ -204,9 +205,9 @@ namespace TrabajoFinal2Estructura_Datos
 
         public void Buscar_pedido()
         {
-            if (miCola == null)
+            if (miCola == null || miCola.Count == 0) //verifica que halla cola ò pedidos ingresados
             {
-                Console.WriteLine("No hay cola. Crea la cola con opción 1 ");
+                Console.WriteLine("No hay cola o no hay pedidos. Cree cola o agregue pedidos. ");
             }
             else
             {
@@ -246,28 +247,30 @@ namespace TrabajoFinal2Estructura_Datos
                 Console.WriteLine("No hay cola para imprimir ");
             }
 
-            if (miCola.Count == 0)
-            {
-                Console.WriteLine("No hay pedidos para imprimir ");
-            }
-
             else
             {
-                TextWriter archivo;
-                archivo = new StreamWriter("miCola.txt");
-                foreach (var elem in miCola)
+                if (miCola.Count == 0) // if anidados y else
                 {
-                    archivo.WriteLine(elem);
+                    Console.WriteLine("No hay pedidos para imprimir ");
                 }
+                else
+                {
 
-                archivo.Close();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Se a guardado el archivo. ");
-                Console.ResetColor();
-                Console.ReadKey();
+                    TextWriter archivo;
+                    archivo = new StreamWriter("miCola.txt");
+                    foreach (var elem in miCola)
+                    {
+                        archivo.WriteLine(elem);
+                    }
 
+                    archivo.Close();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Se a guardado el archivo. ");
+                    Console.ResetColor();
+                    Console.ReadKey();
+
+                }
             }
-
 
         }
     }
