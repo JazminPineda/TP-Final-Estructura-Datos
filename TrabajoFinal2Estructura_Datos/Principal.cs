@@ -12,10 +12,29 @@ namespace TrabajoFinal2Estructura_Datos
 
         public void Crear_Cola()
         {
-            miCola = new Queue<int>(); // cración de Cola en atributo
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Se creo la Cola ");
-            Console.ResetColor();
+            
+            string respuesta = "";
+            if (miCola != null  &&  miCola.Count > 0)  // validacion cuando hay cola y se crea una nueva
+            {
+                Console.WriteLine("Hay una cola con pedidos, desea reemplazar SI o NO ");
+                respuesta = Console.ReadLine();
+                if (respuesta.ToLower() == "si")
+                {
+                    miCola = new Queue<int>(); // cración de Cola en atributo
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Se creo la Cola ");
+                    Console.ResetColor();
+                }
+
+                
+            }
+            else
+            {
+                miCola = new Queue<int>(); // cración de Cola en atributo
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Se creo la Cola ");
+                Console.ResetColor();
+            }
         }
 
 
@@ -53,7 +72,7 @@ namespace TrabajoFinal2Estructura_Datos
 
 
                 bool EsNumero = int.TryParse(pedido, out pedidos); //out salida del entero, resultado se guarada booleano para usar en validaciones V o F resultado
-                while (!EsNumero || pedidos < 0 || pedidos > 998 )// cuando no se puede convertir en int queda en F, tenemos la negacion conviert el F o V y entra al while
+                while (!EsNumero || pedidos < 0 || pedidos > 998)// cuando no se puede convertir en int queda en F, tenemos la negacion conviert el F o V y entra al while
                 {
                     Console.WriteLine("\n\nEl pedido no es un número o tiene que ser menor a 999 ");
                     Console.WriteLine("\n\nIngrese nuevamente el pedido");
@@ -130,9 +149,9 @@ namespace TrabajoFinal2Estructura_Datos
 
         public void listar_Ultimo_Pedido()
         {
-            if (miCola == null)
+            if (miCola == null || miCola.Count == 0) //verifica que halla cola ò pedidos ingresados
             {
-                Console.WriteLine("No hay cola. Crea la cola con opción 1 ");
+                Console.WriteLine("No hay cola o no hay pedidos. Cree cola o agregue pedidos. ");
             }
 
             else
@@ -150,7 +169,7 @@ namespace TrabajoFinal2Estructura_Datos
 
         public void borar_Ultimo_Pedido()
         {
-            if (miCola == null || miCola.Count == 0 ) //verifica que halla cola ò pedidos ingresados
+            if (miCola == null || miCola.Count == 0) //verifica que halla cola ò pedidos ingresados
             {
                 Console.WriteLine("No hay cola o no hay pedidos. Cree cola o agregue pedidos. ");
             }
